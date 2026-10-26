@@ -32,9 +32,9 @@ Lo armé para trabajar con un plan de suscripción de Claude sin posibilidad de 
 
 ## Cómo se hizo
 
-No programo de oficio. Diseñé el sistema y tomé las decisiones, que quedan registradas como ADR: siete de los dieciocho están marcadas como decisión del Director. Claude Code escribió los documentos, los scripts y las pruebas.
+Tengo bases de programación, de la facultad y autodidactas, aunque nunca me dediqué a ella. No practico *vibe coding*. Diseñé el sistema y tomé las decisiones, que quedan registradas como ADR: siete de los dieciocho están marcadas como decisión del Director. Claude Code escribió los documentos, los scripts y las pruebas.
 
-Como no leo el código, la confianza no sale de revisarlo sino de lo que se puede comprobar: pruebas propias, estados de evidencia en cada afirmación y reglas que frenan lo que no debe pasar.
+Como no reviso el código línea por línea, la confianza no sale de revisarlo sino de lo que se puede comprobar: pruebas propias, estados de evidencia en cada afirmación y reglas que frenan lo que no debe pasar.
 
 ## Qué no se publica
 
