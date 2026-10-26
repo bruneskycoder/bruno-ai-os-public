@@ -1,5 +1,7 @@
 # Bruno AI OS — edición pública
 
+[![Validar componentes](https://github.com/bruneskycoder/bruno-ai-os-public/actions/workflows/validar.yml/badge.svg)](https://github.com/bruneskycoder/bruno-ai-os-public/actions/workflows/validar.yml)
+
 > **In English:** The operating contract and structure I use to work with AI agents (Claude Code). It is a repository that is read, not run: a work contract, a measured cost model, model routing, architecture decision records, skills, subagents with separated permissions, and tests. I am not a professional developer: I direct and verify, Claude writes. This is a curated public edition of a private repository. Documents are in Spanish.
 
 ## Qué es
@@ -17,6 +19,7 @@ Lo armé para trabajar con un plan de suscripción de Claude sin posibilidad de 
 
 | Si querés… | Leé |
 |---|---|
+| Ver cómo trabajo con IA, en una página | [`AI_WORKFLOW.md`](AI_WORKFLOW.md) |
 | Entender las reglas de los agentes | [`AGENTS.md`](AGENTS.md) |
 | Ver cómo está armado | [`ARCHITECTURE.md`](ARCHITECTURE.md) |
 | Saber cuánto cuesta y cómo se ahorra | [`COST_MODEL.md`](COST_MODEL.md) y [`MODEL_ROUTING.md`](MODEL_ROUTING.md) |
