@@ -1,0 +1,41 @@
+# --- Secretos: nunca versionar ---
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+*.crt
+credentials.json
+secrets.json
+*_token*
+*_secret*
+.mcp.local.json
+config/local.*
+
+# --- Backups: viven fuera del alcance del agente ---
+backups/
+*.bundle
+
+# --- Ruido del sistema ---
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+*.swp
+~$*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# --- Estado local de herramientas ---
+.claude/settings.local.json
+logs/*.local.*
+
+# El registro del guardia cambia en cada comando: ruido en cada commit.
+# Es auditoria local, no historia del proyecto.
+logs/guardia.log

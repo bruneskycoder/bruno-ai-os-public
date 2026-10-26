@@ -1,0 +1,32 @@
+#!/bin/sh
+# Bruno AI OS — deteccion de secretos antes de cada commit.
+# Instalar con: python config/hooks/instalar.py
+# Politica: FAIL-CLOSED. Si el escaner no esta disponible, el commit se bloquea.
+# Decide por codigo de salida, nunca por texto (la consola esta en es-419).
+
+GITLEAKS="/c/Users/<usuario>/AppData/Local/Microsoft/WinGet/Packages/Gitleaks.Gitleaks_Microsoft.Winget.Source_8wekyb3d8bbwe/gitleaks.exe"
+
+if [ ! -x "$GITLEAKS" ]; then
+    GITLEAKS="$(command -v gitleaks 2>/dev/null)"
+fi
+
+if [ -z "$GITLEAKS" ] || [ ! -x "$GITLEAKS" ]; then
+    echo "" >&2
+    echo "[bruno-ai-os] COMMIT BLOQUEADO: no se encontro gitleaks." >&2
+    echo "  Instalar con:  winget install --id Gitleaks.Gitleaks" >&2
+    echo "  Reinstalar el hook con:  python config/hooks/instalar.py" >&2
+    exit 1
+fi
+
+"$GITLEAKS" git --staged --no-banner --redact --exit-code 1
+if [ $? -ne 0 ]; then
+    echo "" >&2
+    echo "[bruno-ai-os] COMMIT BLOQUEADO: se detecto un posible secreto." >&2
+    echo "  NO uses --no-verify." >&2
+    echo "  Saca el secreto del archivo y guardalo en el Credential Manager:" >&2
+    echo "    python -m keyring set <servicio> <usuario>" >&2
+    echo "" >&2
+    exit 1
+fi
+
+exit 0

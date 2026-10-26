@@ -1,0 +1,24 @@
+# Dependencias Python de Bruno AI OS — todas pineadas.
+#
+# El checklist de admision exige version exacta: un paquete que cambia solo
+# puede alterar su comportamiento sin que nadie se entere. Ver
+# docs/security/ADMISION-DE-COMPONENTES.md
+#
+# Instalar todo:  pip install -r config/requirements.txt
+
+# --- Conversion de documentos a markdown (ADR-0010) ---
+# Leer un PDF de 38 paginas nativo cuesta ~53-80k tokens; convertido, ~11,5k.
+# El extra [pdf] es lo minimo que resuelve el caso; [all] agrega OCR y audio
+# que hoy no se usan.
+markitdown[pdf]==0.1.7
+
+# --- Segundo cerebro para datos PUBLICO (ADR-0008) ---
+# Disponible, NO adoptado: falta demostrar ventaja medible.
+llm==0.35
+llm-gemini==0.34
+
+# --- Secretos fuera de archivos ---
+# Guarda claves en el Credential Manager de Windows.
+# Version sin pinear a proposito: es una dependencia de seguridad y conviene
+# que reciba parches. Es la unica excepcion de este archivo.
+keyring
